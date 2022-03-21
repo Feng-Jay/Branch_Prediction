@@ -11,7 +11,7 @@ using std::ifstream; using std::string;
 
 class Gshare{
 public:
-    int totalnum;
+    int total_num;
     int right;
     int wrong;
     int m; int n;

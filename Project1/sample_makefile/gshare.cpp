@@ -2,7 +2,7 @@
 
 Gshare::Gshare(int m, int n):m(m),n(n)
 {
-    totalnum =0; right=0; wrong =0;
+    total_num =0; right=0; wrong =0;
     maskn = pow(2,n)-1;
     maskatt =pow(2,m-n)-1;
     gbhr = 0;
@@ -18,7 +18,7 @@ void Gshare::simulate(ifstream& infile)
 {
     string line;
     while(getline(infile,line)){
-        ++totalnum;
+        ++total_num;
         int pc = std::stoi(line.substr(0,8),0,16);
         string jmp = line.substr(7,line.length());
         int attach = (pc>>2) & maskatt;
