@@ -8,7 +8,14 @@
 using std::cout; using std::endl;
 
 template <typename cla>
-void print(cla& bim,string str){
+void print(cla& bim,string str,char* argv[],int argc){
+    cout<<"COMMAND\n";
+    for(int i=0; i<argc-1;i++){
+        cout<<argv[i]<<" ";
+    }
+    cout <<"0 0 ";
+    cout <<argv[argc-1];
+    cout<<endl;
     cout<<"OUTPUT"<<endl;
     cout<<"number of predictions:   "<<bim.total_num<<endl;
     cout<<"number of mispredictions:    "<<bim.wrong<<endl;
@@ -22,34 +29,28 @@ void print(cla& bim,string str){
 
 int main(int argc, char* argv[])
 {
-
     string type = argv[1];
     string file;
     int m =atoi(argv[2]);
     int n = atoi(argv[3]);
     if(type=="bimodal")
-        file = argv[5];
+        file = argv[3];
     else if (type=="gshare")
-        file = argv[6];
+        file = argv[4];
     else{
         cout<<"Patameter error!"<<endl;
         return -1;
     }
     std::ifstream input("../traces/traces_all/"+file);
-    cout<<"COMMAND\n";
-    for(int i=0; i<argc;i++){
-        cout<<argv[i]<<" ";
-    }
-    cout<<endl;
     
     if (type=="bimodal"){
         Bimpre bim(m);
         bim.simulate(input);
-        print<Bimpre>(bim,type);
+        print<Bimpre>(bim,type,argv,argc);
     }else {
         Gshare share(m,n);
         share.simulate(input);
-        print<Gshare>(share,type);
+        print<Gshare>(share,type,argv,argc);
     }
     return 0;
 }

@@ -1,5 +1,5 @@
 COMMAND
-./sim bimodal 6 0 0 perl_trace.txt 
+./sim bimodal 6 0 0 perl_trace.txt
 OUTPUT
 number of predictions:   2000000
 number of mispredictions:    530070

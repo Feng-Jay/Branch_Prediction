@@ -1,5 +1,5 @@
 COMMAND
-./sim bimodal5 0 0 jpeg_trace.txt 
+./sim bimodal 5 0 0 jpeg_trace.txt
 OUTPUT
 number of predictions:   2000000
 number of mispredictions:    214222

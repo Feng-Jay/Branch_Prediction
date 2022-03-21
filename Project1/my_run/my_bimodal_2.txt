@@ -1,5 +1,5 @@
 COMMAND
-./sim bimodal 10 0 0 gcc_trace.txt 
+./sim bimodal 10 0 0 gcc_trace.txt
 OUTPUT
 number of predictions:   2000000
 number of mispredictions:    313427
